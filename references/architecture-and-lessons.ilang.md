@@ -1,5 +1,5 @@
 ::ILANG::v5.0
-[TYPE:architecture_reference][PROJECT:agent_ready_geo][VERSION:1.0.0][DATE:2026-09-19][LANG:en]
+[TYPE:architecture_reference][PROJECT:agent_ready_geo][VERSION:1.0.1][DATE:2026-09-20][LANG:en]
 
 ::STATE{@SCOPE, value:Where each capability lives on common hosting types, and failure patterns already seen on production sites}
 
@@ -28,7 +28,7 @@
   middleware_asset_fallback:Edge middleware that fetches a Markdown twin through the static asset binding can receive the homepage with 200 when the twin is missing. Judge by the body, not the status.
   head_returns_404:A worker that only handles GET answered HEAD with 404 while GET returned 200. Handle HEAD on every page route, then purge the edge cache for the affected URLs, because the 404 may be cached.
   managed_robots_prepend:A CDN option that manages robots.txt prepended its own block that disallowed several AI crawlers, contradicting the site's own Allow groups. Some parsers read only the first matching group. Move any needed lines, such as Content-Signal, into the site's own robots.txt; turn the managed block off only with the owner's decision, then purge robots.txt.
-  default_client_blocked:Requests from Python's default urllib client got HTTP 403 with error code 1010 while browsers, curl and other libraries got 200. Cloudflare's browser integrity check rejects that client signature. Record both clients; the owner may scope an exception to the agent-facing paths. Never add a site-wide skip keyed on User-Agent.
+  default_client_blocked:Requests from Python's default urllib client got HTTP 403 with error code 1010 while browsers, curl and other libraries got 200. On one zone a path-scoped exception to the browser integrity check fixed it. On another, neither a configuration rule turning the check off nor a custom rule skipping every skippable product changed anything: the HTTP DDoS managed ruleset's rule for known bad user agents, which also matched sqlmap, blocked the client before those rules ran, and Free and Pro plans can override it only zone-wide. Retest after any exception, remove exceptions that change nothing, and never widen them to the whole site.
   dns_aid_dashboard_fields:A DNS dashboard with separate SVCB fields for priority, target and value stored the whole record typed into the target field as an escaped string. Enter priority 1, target DOMAIN. and value alpn="h2" port="443" key65409="/ai/index.ilang" in their own fields, then read the record back through DNS over HTTPS.
   negative_dnssec_cache:After DNSSEC was enabled and the parent DS appeared, Google Public DNS validated at once while Cloudflare's resolver, the scanner's default, kept serving the older insecure answer until its cache expired. The scanner moved from 93 to 100 without further DNS changes. Compare DS, RRSIG and AD evidence with TTL before touching a correct zone; a public resolver's cache purge page can shorten the wait.
   prm_resource_mismatch:Setting the protected resource to the planned operation path instead of ORIGIN produced a resource-mismatch failure and a score of 93. Keep resource equal to the identifier being described and put future paths in a separate field.

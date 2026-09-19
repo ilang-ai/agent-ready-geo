@@ -1,5 +1,5 @@
 ::ILANG::v5.0
-[TYPE:implementation_reference][PROJECT:agent_ready_geo][VERSION:1.0.0][DATE:2026-09-19][LANG:en]
+[TYPE:implementation_reference][PROJECT:agent_ready_geo][VERSION:1.0.1][DATE:2026-09-20][LANG:en]
 
 ::STATE{@ROLE, function:Build and verify each agent-readiness capability on the target site's real stack}
 ::STATE{@GOAL, value:Default-profile 100 on the scanner result page; a recorded conclusion for C01 to C24; every capability presented as available works and planned items are labeled planned; visitor journeys unharmed}
@@ -121,7 +121,7 @@
   [MUST] Private keys stay in backend secret storage. The key id, signature parameters and identity must match real requests.
   [MUST] Inbound verification follows the real client identity, key, signature and time rules. Google-Agent signs some requests while rollout continues, so an unsigned request is not illegitimate by that fact alone.
   [MUST] Record access results separately for an ordinary browser, an ordinary HTTP client, search crawlers, signed agents and logged-in users. Never impersonate Google or another crawler to create passing evidence.
-  [MUST] When a default library client gets 403 while curl or a browser gets 200, keep the client, request and edge response and find the real rule. A Cloudflare page with error code 1010 means the browser integrity check rejected the client signature. Such a difference proves neither that the service is down nor that other agents get through.
+  [MUST] When a default library client gets 403 while curl or a browser gets 200, keep the client, request and edge response and find the real rule. A Cloudflare page with error code 1010 means a block on the client signature: either the browser integrity check, which a path-scoped exception can skip, or the HTTP DDoS managed ruleset's rule for known bad user agents, which neither skip rules nor configuration rules bypass and which Free and Pro plans can override only for the whole zone. Retest after adding an exception; if nothing changes, remove the exception and record the block as a platform limit instead of widening it. Such a difference proves neither that the service is down nor that other agents get through.
   [MUST] Never switch off all protections, and never skip a protection site-wide because of User-Agent, Accept or a path alone. An exception names the protection, the proven path, method and failure, for example the browser integrity check on GET /.well-known/*, and needs the owner's approval.
   [MUST] Fix only proven false blocks, keep rate limits, signatures and sensitive-path protection, and change access rules only after the owner approves the listed kept and changed entry points.
 
