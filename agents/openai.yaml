@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agent Ready GEO"
+  short_description: "Check and raise a site's isitagentready.com score"
+  default_prompt: "::ILANG::v5.0\n::OBJECTIVE{Use $agent-ready-geo on the user's website. Resolve the mode from the request: inspect_site, implement_site or recheck_site.}\n::ILANG::COMPLETE::"
+policy:
+  allow_implicit_invocation: true
