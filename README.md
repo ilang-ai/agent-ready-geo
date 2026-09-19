@@ -1,14 +1,16 @@
-# Agent Ready GEO
+# Agent Ready GEO: make your website agent-ready
 
-Is your site agent-ready? Agent Ready GEO is an agent skill that takes a website to 100/100 on [isitagentready.com](https://isitagentready.com) (Level 5, Agent-Native) with the access you give it. Every capability it presents as available actually works; anything not built yet is published only as a labeled coming-soon declaration that you approve.
+[![Release](https://img.shields.io/github/v/release/ilang-ai/agent-ready-geo)](https://github.com/ilang-ai/agent-ready-geo/releases) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**Is your site agent-ready?** Agent Ready GEO is an agent skill for Claude Code, Codex and any client that supports Agent Skills. It takes a website to 100/100 on [isitagentready.com](https://isitagentready.com) (Level 5, Agent-Native) with the access you give it: llms.txt and llms-full.txt, Markdown for agents, Link headers, an API catalog and OpenAPI, a running MCP server with its server card, an Agent Skills index, WebMCP browser tools, ARD, OAuth discovery, auth.md and DNS-AID, all built on the stack you already have. Every capability it presents as available actually works; anything not built yet is published only as a labeled coming-soon declaration that you approve.
 
 This project is not affiliated with Cloudflare or isitagentready.com.
 
-It runs inside your coding agent (Claude Code, Codex or any client that loads Agent Skills), reads your live score, and builds the missing pieces on the stack you already have: a VPS, WordPress, Workers, an application framework or static hosting with the functions your host offers.
+GEO here means groundwork for generative engine optimization: machine-readable access for AI agents, AI search and answer engines. No AI citations, rankings or traffic are promised.
 
-GEO here means groundwork: machine-readable access for AI agents and AI search. No AI citations, rankings or traffic are promised.
+**Contents:** [Proof](#two-of-our-own-sites-score-100100) · [What it builds](#what-it-builds-llmstxt-markdown-for-agents-webmcp-mcp-and-more) · [Install](#install-as-a-claude-code-skill-codex-skill-or-agent-skill) · [Use](#how-to-use-it) · [FAQ](#faq) · [What you may be asked](#what-you-may-be-asked-to-do) · [What it will not do](#what-it-will-not-do) · [Privacy](#privacy) · [Scripts](#scripts) · [I-Lang](#written-in-i-lang)
 
-## Two of our own sites use this method
+## Two of our own sites score 100/100
 
 | Site | Result page (opening it runs a fresh scan) |
 |---|---|
@@ -17,7 +19,7 @@ GEO here means groundwork: machine-readable access for AI agents and AI search. 
 
 Both showed 100, Level 5 Agent-Native, on 2026-09-19. Their OAuth checks pass with coming-soon declarations; neither site offers OAuth sign-in yet.
 
-## What it builds
+## What it builds: llms.txt, Markdown for agents, WebMCP, MCP and more
 
 | Scanner check | What the skill builds and verifies |
 |---|---|
@@ -34,11 +36,13 @@ Both showed 100, Level 5 Agent-Native, on 2026-09-19. Their OAuth checks pass wi
 | DNS-AID | A service index plus the exact SVCB record and DNSSEC steps for your DNS |
 | Web Bot Auth | Only when your site runs an outbound agent that signs requests, or when you ask for a key directory in advance, labeled as having no signing traffic yet; the check is informational otherwise |
 
-It also writes `llms.txt` and `llms-full.txt`, checks structured data, and walks the main visitor journey on desktop and phone so nothing a visitor used before breaks.
+It also writes `llms.txt` and `llms-full.txt` from your real pages, checks structured data, and walks the main visitor journey on desktop and phone so nothing a visitor used before breaks.
 
 Instructions it writes for agents on your site (your site's own skill, the agent section of `auth.md`, the DNS-AID service index) use [I-Lang](https://ilang.ai/spec/), a plain-text instruction format, by default; ask for plain Markdown if you prefer. Those files carry your site's name, never ours.
 
-## Install
+It works on the hosting you have: a VPS, WordPress or another CMS, Cloudflare Workers or Pages, an application framework, or static hosting with the functions your host offers.
+
+## Install as a Claude Code skill, Codex skill or Agent Skill
 
 Claude Code:
 
@@ -52,15 +56,45 @@ Codex:
 git clone https://github.com/ilang-ai/agent-ready-geo ~/.codex/skills/agent-ready-geo
 ```
 
-Other clients: copy the folder into the client's skills directory. The folder name must stay `agent-ready-geo`.
+Other clients that load Agent Skills (a folder with a `SKILL.md`): copy the folder into the client's skills directory. The folder name must stay `agent-ready-geo`.
 
-## Use
+## How to use it
 
 Ask your agent in plain words:
 
 - "Check how agent-ready https://example.com is." Read-only: score, capability matrix, gaps.
 - "Make https://example.com agent-ready and get it to 100." Builds, tests, deploys with the access you give it, rescans.
 - "Recheck https://example.com." Confirms the current release still passes; repairs regressions.
+
+## FAQ
+
+### What is an agent-ready website?
+
+A website that AI agents can discover, read and use without guessing: rules for AI crawlers, a readable Markdown version of each page, a list of its APIs, a working MCP server, a skill that explains its tasks, and discovery records that point to all of them. [isitagentready.com](https://isitagentready.com) scores these checks from 0 to 100 and in levels up to Level 5, Agent-Native.
+
+### How do I get 100/100 on isitagentready.com?
+
+Install this skill and ask your agent to make the site agent-ready. It reads your current result page, fixes each failing check on your real hosting, and rescans. Two steps usually need you: one DNS record for DNS-AID with DNSSEC, and a decision on OAuth if your site has no OAuth server (see below).
+
+### Is this an llms.txt generator?
+
+It writes `llms.txt` and `llms-full.txt` from your real pages, following the [llmstxt.org](https://llmstxt.org/) format, and then does much more: Markdown for agents, API catalog, MCP, Agent Skills, WebMCP and DNS-AID. Google Search does not need llms.txt to rank a page; agents and developer tools read it.
+
+### Is it a GEO or AI SEO tool?
+
+It does the technical groundwork for GEO (generative engine optimization), AEO (answer engine optimization) and AI SEO: machine-readable, verifiable access to your real content. It does not promise AI citations, rankings or traffic, and it adds no content written to game them.
+
+### What is WebMCP, and does my site need it?
+
+WebMCP lets a page register browser tools that an AI agent can call while the page is open. As of September 2026 it is a proposed web standard, with a Chrome origin trial starting in Chrome 149. The scanner checks it, so the skill registers real tools through the native API and leaves the page unchanged for browsers without it.
+
+### Does it work with Claude, Codex and other agents?
+
+Yes. It is a standard Agent Skill: a `SKILL.md` with reference files and two Python scripts. Claude Code and Codex load it from their skills folders; other clients that support the Agent Skills format can use the same folder.
+
+### Will it change my DNS, login or firewall?
+
+Only after you approve the listed change. It shows the exact DNS records and waits for approval even if it has DNS access, never overwrites real authentication, and never adds a site-wide firewall bypass.
 
 ## What you may be asked to do
 
