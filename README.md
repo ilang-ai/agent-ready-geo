@@ -1,6 +1,6 @@
 # Agent Ready GEO: make your website agent-ready
 
-[![Release](https://img.shields.io/github/v/release/ilang-ai/agent-ready-geo)](https://github.com/ilang-ai/agent-ready-geo/releases) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/ilang-ai/agent-ready-geo)](https://github.com/ilang-ai/agent-ready-geo/releases) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22864996.svg)](https://doi.org/10.5281/zenodo.22864996)
 
 **Is your site agent-ready?** Agent Ready GEO is an agent skill for Claude Code, Codex and any client that supports Agent Skills. It takes a website to 100/100 on [isitagentready.com](https://isitagentready.com) (Level 5, Agent-Native) with the access you give it: llms.txt and llms-full.txt, Markdown for agents, Link headers, an API catalog and OpenAPI, a running MCP server with its server card, an Agent Skills index, WebMCP browser tools, ARD, OAuth discovery, auth.md and DNS-AID, all built on the stack you already have. Every capability it presents as available actually works; anything not built yet is published only as a labeled coming-soon declaration that you approve.
 
@@ -133,6 +133,10 @@ Python 3.9 or newer, standard library only. Use `python` where that is your inte
 ## Written in I-Lang
 
 The skill's instructions are written in [I-Lang](https://ilang.ai/spec/), a structured language for instructing AI models, and pass the I-Lang grammar validator with no errors or warnings.
+
+## Citation
+
+[CITATION.cff](CITATION.cff); Zenodo archives each release. Concept DOI [10.5281/zenodo.22864996](https://doi.org/10.5281/zenodo.22864996) (all versions).
 
 ## License
 
