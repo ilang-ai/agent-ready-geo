@@ -8,7 +8,7 @@ This project is not affiliated with Cloudflare or isitagentready.com.
 
 GEO here means groundwork for generative engine optimization: machine-readable access for AI agents, AI search and answer engines. No AI citations, rankings or traffic are promised.
 
-**Contents:** [Proof](#two-of-our-own-sites-score-100100) · [What it builds](#what-it-builds-llmstxt-markdown-for-agents-webmcp-mcp-and-more) · [Install](#install-as-a-claude-code-skill-codex-skill-or-agent-skill) · [Use](#how-to-use-it) · [FAQ](#faq) · [What you may be asked](#what-you-may-be-asked-to-do) · [What it will not do](#what-it-will-not-do) · [Privacy](#privacy) · [Scripts](#scripts) · [I-Lang](#written-in-i-lang)
+**Contents:** [Proof](#two-of-our-own-sites-score-100100) · [What it builds](#what-it-builds-llmstxt-markdown-for-agents-webmcp-mcp-and-more) · [Install](#install-as-a-claude-code-skill-codex-skill-or-agent-skill) · [Use](#how-to-use-it) · [FAQ](#faq) · [What you may be asked](#what-you-may-be-asked-to-do) · [What it will not do](#what-it-will-not-do) · [Privacy](#privacy) · [Scripts](#scripts) · [iLang](#written-in-ilang)
 
 ## Two of our own sites score 100/100
 
@@ -38,7 +38,7 @@ Both showed 100, Level 5 Agent-Native, on 2026-09-19. Their OAuth checks pass wi
 
 It also writes `llms.txt` and `llms-full.txt` from your real pages, checks structured data, and walks the main visitor journey on desktop and phone so nothing a visitor used before breaks.
 
-Instructions it writes for agents on your site (your site's own skill, the agent section of `auth.md`, the DNS-AID service index) use [I-Lang](https://ilang.ai/spec/), a plain-text instruction format, by default; ask for plain Markdown if you prefer. Those files carry your site's name, never ours.
+Instructions it writes for agents on your site (your site's own skill, the agent section of `auth.md`, the DNS-AID service index) use [iLang](https://ilang.ai/spec/), a plain-text instruction format, by default; ask for plain Markdown if you prefer. Those files carry your site's name, never ours.
 
 It works on the hosting you have: a VPS, WordPress or another CMS, Cloudflare Workers or Pages, an application framework, or static hosting with the functions your host offers.
 
@@ -130,9 +130,9 @@ python3 -m unittest discover -s tests
 
 Python 3.9 or newer, standard library only. Use `python` where that is your interpreter's name.
 
-## Written in I-Lang
+## Written in iLang
 
-The skill's instructions are written in [I-Lang](https://ilang.ai/spec/), a structured language for instructing AI models, and pass the I-Lang grammar validator with no errors or warnings.
+The skill's instructions are written in [iLang](https://ilang.ai/spec/), a structured language for instructing AI models, and pass the iLang grammar validator with no errors or warnings.
 
 ## Citation
 

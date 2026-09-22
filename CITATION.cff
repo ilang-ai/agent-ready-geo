@@ -12,7 +12,7 @@ abstract: >-
   records and, where the site signs its own requests, Web Bot Auth. Capabilities
   presented as available have to work; anything not built yet is published only
   as a labeled coming-soon declaration the site owner approves. The skill's
-  instructions are written in I-Lang and pass the I-Lang grammar validator; the
+  instructions are written in iLang and pass the iLang grammar validator; the
   read-only probe and the artifact verifier are Python 3.9 standard library only
   and ship with their tests.
 type: software
@@ -35,4 +35,4 @@ keywords:
   - Model Context Protocol
   - Agent Skills
   - AI agents
-  - I-Lang
+  - iLang
