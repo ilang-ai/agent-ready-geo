@@ -1,5 +1,5 @@
 ::ILANG::v5.0
-[TYPE:acceptance_reference][PROJECT:agent_ready_geo][VERSION:1.0.0][DATE:2026-09-19][LANG:en]
+[TYPE:acceptance_reference][PROJECT:agent_ready_geo][VERSION:1.0.3][DATE:2026-09-23][LANG:en]
 
 ::STATE{@SCOPE, value:Coverage policy, capability matrix, evidence levels, acceptance tests and completion rules}
 ::STATE{@PASS_RULE, value:A capability passes when the public URL returns the right content and type and the advertised behavior works; a created file is not a pass}
@@ -44,7 +44,7 @@
   [ITEM] C09 HTTP Link: the scanned canonical page's response carries Link with the applicable relations and every target answers with the declared type.
   [ITEM] C10 data API: known input returns parseable data with stable IDs and source URLs; unknown ID returns a clear not-found; missing parameter returns a validation error; limits hold.
   [ITEM] C11 OpenAPI and API catalog: /.well-known/api-catalog answers as application/linkset+json; every anchor, service-desc and service-doc resolves with a matching media type; the documented operations match the real service.
-  [ITEM] C12 MCP and server card: initialize, the initialized notification and tools/list work with the right version and session; at least one tools/call returns real results; the card matches the server.
+  [ITEM] C12 MCP and server card: initialize, the initialized notification and tools/list work with the right version and session; every tool carries readOnlyHint, destructiveHint, idempotentHint and openWorldHint as explicit booleans that match its handler; at least one tools/call returns real results; the card matches the server.
   [ITEM] C13 agent skills: the index follows the current schema; each artifact's sha256 over the served, content-decoded bytes equals its digest; following the skill completes a task.
   [ITEM] C14 WebMCP: native registration and one call in a supporting browser with version and enablement recorded; unsupported browsers keep the normal flow; no fake modelContext.
   [ITEM] C15 ARD: /.well-known/ai-catalog.json answers with the current shape and exactly one of url or data per entry; an optional /.well-known/ard.json is generated from the same list and validated separately.
@@ -89,7 +89,7 @@
   [CASE] T13 API unknown and missing input: unknown ID and missing parameter; expect a clear not-found or validation error, never a fabricated match or an indistinguishable success placeholder.
   [CASE] T14 API bounds: length, pagination, count and applicable rate limits; expect bounded behavior and understandable errors, with no unauthorized load testing.
   [CASE] T15 OpenAPI and catalog: get the service description from the discovery entry and call one operation; expect method, parameters, authentication and response consistent with the real service.
-  [CASE] T16 MCP lifecycle: initialize, the initialized notification and tools/list; expect correct protocol version, session and capabilities.
+  [CASE] T16 MCP lifecycle: initialize, the initialized notification and tools/list; expect correct protocol version, session and capabilities, and every listed tool with all four annotations present as booleans, none missing, each matching what its handler does.
   [CASE] T17 MCP real calls: known, unknown and qualified queries; expect real results, sources and error meaning, with other card capabilities checked separately.
   [CASE] T18 skill and digest: download the artifact from the index, check the digest and run one task by its text; expect complete supporting files, correct links and a matching digest.
   [CASE] T19 WebMCP native: register, call and clean up in a supporting browser; expect real API execution with browser version and evidence saved; a mock is never upgraded to native.

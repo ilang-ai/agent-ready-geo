@@ -3,14 +3,14 @@ name: agent-ready-geo
 description: "Make a website agent-ready and take it to 100/100 on isitagentready.com (Level 5, Agent-Native). Inspects the live score, then implements and verifies robots.txt AI rules, Content Signals, sitemap, Link headers, Markdown for agents, llms.txt, API catalog, OpenAPI, MCP server card, Agent Skills index, WebMCP, ARD, OAuth discovery and auth.md (real, or a labeled coming-soon declaration the owner approves), DNS-AID, and Web Bot Auth where the site signs requests, on the site's real hosting. Use when the user wants to check or raise an Agent Ready or isitagentready score, make a site agent-ready or agent-native, add llms.txt or WebMCP, or prepare a website for AI agents and GEO. Not for keyword research or ranking questions."
 license: MIT
 metadata:
-  version: "1.0.2"
-  updated: "2026-09-21"
+  version: "1.0.3"
+  updated: "2026-09-23"
   author: "ilang-ai"
   repository: "https://github.com/ilang-ai/agent-ready-geo"
 ---
 
 ::ILANG::v5.0
-[TYPE:agent_skill][PROJECT:agent_ready_geo][VERSION:1.0.2][DATE:2026-09-21][LANG:en]
+[TYPE:agent_skill][PROJECT:agent_ready_geo][VERSION:1.0.3][DATE:2026-09-23][LANG:en]
 
 ::STATE{@TARGET_URL, value:Resolve from the latest website URL the user gave or the project they clearly selected}
 ::STATE{@ORIGIN, value:Verified canonical scheme and host of the target; it may serve more than this application}
